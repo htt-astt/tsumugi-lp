@@ -313,6 +313,9 @@
 
   h2.sec,.reason h3,.step h4,.relief .big,.closing h2,.goods h3,.lead,.hr-lead{line-break:strict;word-break:normal;overflow-wrap:normal}
   .relief .big,.closing h2{text-wrap:balance}
+  /* 写真を和の色調に統一（彩度を抑え・淡い古色） */
+  .honshi .win img,.kake img{filter:saturate(.68) sepia(.14) contrast(.96) brightness(.985)}
+  .honshi .win::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:rgba(120,96,52,.06)}
   /* 優しさ調整：角丸・柔らかい影 */
   .seal{border-radius:9px}
   .hd .bm .seal{border-radius:7px}
