@@ -133,8 +133,19 @@
   .step .k{font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:700}
   .step h4{font-family:'Shippori Mincho B1',serif;font-size:19px;font-weight:700;margin:4px 0 7px;letter-spacing:.03em}
   .step p{font-size:14px;color:var(--sub);line-height:1.85}
-  .kake{margin-top:13px;background:var(--mat);padding:7px;border:1px solid var(--line);box-shadow:0 12px 26px rgba(120,90,50,.14)}
-  .kake img{width:100%;display:block;border:1px solid var(--line-d)}
+  .kake{position:relative;margin-top:13px;background:var(--mat);padding:11px;border:1px solid var(--line);box-shadow:0 12px 26px rgba(120,90,50,.14)}
+  .kake img{width:100%;display:block;border:1px solid rgba(172,134,55,.5)}
+  /* 隅金具（四隅の金の金具） */
+  .kake::after{content:"";position:absolute;inset:5px;pointer-events:none;z-index:3;
+    background:
+      linear-gradient(var(--gold),var(--gold)) left top/16px 2px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) left top/2px 16px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right top/16px 2px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right top/2px 16px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) left bottom/16px 2px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) left bottom/2px 16px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right bottom/16px 2px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right bottom/2px 16px no-repeat}
   .step .kake img{height:168px;object-fit:cover}
 
   /* reasons */
@@ -209,7 +220,9 @@
 
   /* gallery 額 */
   .gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:24px}
-  .gal .kake{padding:5px}
+  .gal .kake{padding:7px}
+  .duo .kake,.gal .kake{margin-top:0}
+  .gal .kake::after{inset:4px}
   .gal .kake img{aspect-ratio:1;object-fit:cover;width:100%}
 
   /* faq */
@@ -225,7 +238,8 @@
   /* closing */
   .closing{position:relative;background:var(--sumi)}
   .closing .kake{margin:0;padding:12px;background:var(--sumi);border:none}
-  .closing .kake .fr{position:relative;border:1px solid var(--line-d)}
+  .closing .kake::after{display:none}
+  .closing .kake .fr{position:relative;border:1px solid var(--gold)}
   .closing .kake img{height:400px;object-fit:cover;width:100%}
   .closing .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;padding:0 30px 34px;background:linear-gradient(180deg,rgba(41,36,32,.1) 30%,rgba(41,36,32,.5) 70%,rgba(41,36,32,.92) 100%)}
   .closing h2{font-family:'Shippori Mincho B1',serif;font-size:25px;font-weight:700;color:#FBF3E6;line-height:1.7;text-shadow:0 2px 16px rgba(0,0,0,.5)}
@@ -247,7 +261,8 @@
   .sticky .s-x{flex:1;border:1px solid var(--line-d);color:var(--goldhi);font-size:11px;gap:3px}
   .sticky .s-x .ic{width:17px;height:17px}
 
-  h2.sec,.reason h3,.step h4,.relief .big,.closing h2,.goods h3,.hr-lead,.lead,.relief p,.step p,.reason p,.goods p{text-wrap:balance;line-break:strict}
+  h2.sec,.reason h3,.step h4,.relief .big,.closing h2,.goods h3,.lead,.hr-lead{line-break:strict;word-break:normal;overflow-wrap:normal}
+  .relief .big,.closing h2{text-wrap:balance}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}.seam path{stroke-dashoffset:0}}
 </style>
 </head>
