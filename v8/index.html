@@ -10,11 +10,11 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --washi:#F3EBDA; --washi2:#EBE0CB; --mat:#FBF7EE;
-    --sumi:#292420; --sumi2:#38322A; --ink-t:#ECE3D0;
-    --gold:#AC8637; --gold2:#C7A458; --goldhi:#E4C87E;
-    --enji:#9A474D; --enji-d:#7C383E;
-    --ink:#2C2620; --sub:#7C6E58; --line:#DDCFB2; --line-d:rgba(172,134,55,.32);
+    --washi:#F6EFE1; --washi2:#EFE5D1; --mat:#FCF9F1;
+    --sumi:#342C22; --sumi2:#43392C; --ink-t:#EFE7D6;
+    --gold:#B18C46; --gold2:#CCAC62; --goldhi:#E8CD88;
+    --enji:#A85F5F; --enji-d:#8C4C4E;
+    --ink:#2F2921; --sub:#84735F; --line:#E6DAC2; --line-d:rgba(177,140,70,.28);
   }
   html{scroll-behavior:smooth}
   body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);font-size:16.5px;line-height:1.95;font-weight:400;
@@ -26,8 +26,9 @@
   .wrap{max-width:500px;margin:0 auto;position:relative;overflow:hidden;
     background-color:var(--washi);
     background-image:
-      repeating-linear-gradient(90deg, rgba(120,96,52,.035) 0 1px, transparent 1px 7px),
-      repeating-linear-gradient(0deg, rgba(120,96,52,.02) 0 1px, transparent 1px 7px);}
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='58' height='58'%3E%3Cg fill='none' stroke='%23E3D6B7' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='29'/%3E%3Ccircle cx='58' cy='0' r='29'/%3E%3Ccircle cx='0' cy='58' r='29'/%3E%3Ccircle cx='58' cy='58' r='29'/%3E%3Ccircle cx='29' cy='29' r='29'/%3E%3C/g%3E%3C/svg%3E"),
+      repeating-linear-gradient(90deg, rgba(120,96,52,.028) 0 1px, transparent 1px 7px);
+    background-size:58px 58px, auto;}
 
   .ic{width:1em;height:1em;display:inline-block;vertical-align:-.14em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
   .ic-f{stroke:none;fill:currentColor}
@@ -120,7 +121,7 @@
   .washi{background:transparent;padding:54px 30px}
   .washi.alt{background:rgba(214,190,150,.16)}
   h2.sec .kin{display:inline-block;margin-left:8px}
-  .lead{font-size:14.5px;color:var(--sub);line-height:2;margin-top:16px}
+  .lead{font-family:'Klee One',cursive;font-size:15px;color:#6D5B47;line-height:2.1;margin-top:16px}
 
   /* kintsugi journey */
   .journey{margin-top:30px;position:relative;padding-left:30px}
@@ -263,6 +264,15 @@
 
   h2.sec,.reason h3,.step h4,.relief .big,.closing h2,.goods h3,.lead,.hr-lead{line-break:strict;word-break:normal;overflow-wrap:normal}
   .relief .big,.closing h2{text-wrap:balance}
+  /* 優しさ調整：角丸・柔らかい影 */
+  .seal{border-radius:9px}
+  .hd .bm .seal{border-radius:7px}
+  .cta{border-radius:13px;box-shadow:0 12px 30px rgba(177,140,70,.26)}
+  .cta-row a,.hd-tel{border-radius:10px}
+  .sticky .s-tel,.sticky .s-x{border-radius:10px}
+  .voice .av{border-radius:13px}
+  .kake{box-shadow:0 14px 30px rgba(120,90,50,.11)}
+  .pay span,.goods .tag{border-radius:6px}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}.seam path{stroke-dashoffset:0}}
 </style>
 </head>
@@ -472,6 +482,8 @@
       <details><summary>あとから追加料金はかかりませんか？</summary><p>各プランに出張費が含まれており、追加料金は一切かかりません。ご納骨をご希望の場合のみ、別途霊園費用がかかります。</p></details>
     </div>
   </section>
+
+  <svg class="nami" viewBox="0 0 96 26" preserveAspectRatio="none" style="margin:6px 0 -1px"><use href="#nami-p"/></svg>
 
   <!-- CLOSING -->
   <section class="closing" id="contact">
